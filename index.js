@@ -44,6 +44,11 @@ clearAllButton.addEventListener('click', () => {
 })
 
 clearButton.addEventListener('click', () => {
+  if (getOutput() == "" && getHistory()) {
+    let n = getHistory().substr(0, getHistory().length);
+    printHistory("");
+    printOutput(n);
+  }
   let n = getOutput().substr(0, getOutput().length - 1);
   printOutput(n);
 })
