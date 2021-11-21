@@ -21,7 +21,7 @@ function printOutput(num) {
 }
 
 function checkIfOperatorExists(num) {
-  let x = num.charAt(str.length - 1);
+  let x = num.charAt(num.length - 1);
   switch (x) {
     case "+":
       return true;
@@ -30,6 +30,8 @@ function checkIfOperatorExists(num) {
     case "*":
       return true;
     case "/":
+      return true;
+    case "%":
       return true;
   }
   return false;
@@ -76,13 +78,12 @@ numberButtons.forEach(button => {
 operatorButtons.forEach(button => {
   button.addEventListener('click', () => {
     if (getOutput() == "") return;
-    // else if (getOutput() && checkIfOperatorExists(getHistory())) {
-    //   let n = getHistory().toString() + " " + getOutput().toString();
-    //   printOutput("");
-    //   let res = eval(n);
-    //   printHistory(res.toString() + " " + button.innerText.toString());
-    // }
-    else {
+    else if (getOutput() && checkIfOperatorExists(getHistory())) {
+      let n = getHistory().toString() + " " + getOutput().toString();
+      printOutput("");
+      let res = eval(n);
+      printHistory(res.toString() + " " + button.innerText.toString());
+    } else {
       let n = getOutput().toString() + " " + button.innerText.toString();
       printHistory(n);
       printOutput("");
