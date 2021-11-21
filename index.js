@@ -54,7 +54,7 @@ clearButton.addEventListener('click', () => {
 })
 
 equalButton.addEventListener('click', () => {
-  if (getOutput() && getHistory()) {
+  if (checkIfOperatorExists(getHistory()) && getOutput()) {
     let n = getHistory().toString() + " " + getOutput().toString();
     printHistory(n);
     let res = eval(n);
@@ -65,7 +65,8 @@ equalButton.addEventListener('click', () => {
       res = Number(Math.round(res + 'e2') + 'e-2'); // if it has decimal round it to two places
     }
     printOutput(res);
-  } else {
+  } else if ((getOutput() && getHistory())) return;
+  else {
     alert("Invalid computation");
     return;
   }
