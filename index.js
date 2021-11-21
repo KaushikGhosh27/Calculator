@@ -77,12 +77,17 @@ numberButtons.forEach(button => {
 
 operatorButtons.forEach(button => {
   button.addEventListener('click', () => {
-    if (getOutput() == "") return;
+    if (getOutput() == "" && getHistory() == "") return;
     else if (getOutput() && checkIfOperatorExists(getHistory())) {
       let n = getHistory().toString() + " " + getOutput().toString();
       printOutput("");
       let res = eval(n);
       printHistory(res.toString() + " " + button.innerText.toString());
+    } else if (getOutput() == "" && checkIfOperatorExists(getHistory())) {
+      let n = getHistory().substr(0, getHistory().length - 1) + " " + button.innerText.toString();
+      printHistory(n);
+      let res = eval(n);
+      printOutput(res);
     } else {
       let n = getOutput().toString() + " " + button.innerText.toString();
       printHistory(n);
