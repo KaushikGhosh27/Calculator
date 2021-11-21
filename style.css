@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+ background: linear-gradient(225deg, rgb(75 155 109) 0%, rgb(0 0 0) 50%, rgb(75 65 115) 100%);
+}
+
+.main-container {
+  height: 100vh;
+  width: 50vw;
+  background: url(./images/calculator.jpg) center center/cover;
+  margin: auto;
+  position: relative;
+}
+
+.sub-container {
+  position: absolute;
+  top: 135px;
+  left: 205px;
+  border-radius: 10px;
+}
+
+.top-container {
+  background: #3b413b;
+  height: 15vh;
+  width: 25vw;
+  margin: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.display {
+  background-color: #060708b8;
+  height: 15vh;
+  width: 20vw;
+  position: relative;
+}
+
+.history{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 5px;
+  right: 1px;
+}
+.output{
+  color: white;
+  font-size: 45px;
+  position: absolute;
+  bottom: 0;
+  right: 1px;
+  word-wrap: break;
+}
+.bottom-container {
+  background: #233b38;
+  height: 50vh;
+  width: 25vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.operator{
+  background-color:#10171f;
+}
+
+button {
+  background: #2d5583db;
+  border-radius: 15%;
+  color: white;
+  cursor: pointer;
+  font-family: 'Oswald;', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  height: 30px;
+  width: 50px;
+  margin: 1.3em;
+}
+
+#clear{
+  background-color: red;
+}
+
+#clearAll {
+  background-color: #2C394B;
+  color: white;
+  height: 70px;
+  outline: none;
+}
+
+#equal{
+  background: #4d5668;
+}
