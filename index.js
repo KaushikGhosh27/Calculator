@@ -54,7 +54,18 @@ clearButton.addEventListener('click', () => {
 })
 
 equalButton.addEventListener('click', () => {
-  if (checkIfOperatorExists(getHistory()) && getOutput()) {
+  if (checkIfOperatorExists(getHistory()) && getOutput().charAt(0) == "-") {
+    let n = getHistory().toString() + " " + "(" + getOutput().toString() + ")";
+    printHistory(n);
+    let res = eval(n);
+    if (res % 1 == 0) // does not contain decimal
+    {
+      res = Number(res);
+    } else {
+      res = Number(Math.round(res + 'e2') + 'e-2'); // if it has decimal round it to two places
+    }
+    printOutput(res);
+  } else if (checkIfOperatorExists(getHistory()) && getOutput()) {
     let n = getHistory().toString() + " " + getOutput().toString();
     printHistory(n);
     let res = eval(n);
@@ -83,8 +94,12 @@ numberButtons.forEach(button => {
 
 operatorButtons.forEach(button => {
   button.addEventListener('click', () => {
-    if (getOutput() == "" && getHistory() == "") return;
-    else if (getOutput() && checkIfOperatorExists(getHistory())) {
+    if (getOutput() == "" && (getHistory() == "" && button.innerText != "-")) return;
+    else if (button.innerText == '-' && (getHistory() == "" && getOutput() == "")) {
+      printOutput("-");
+    } else if (button.innerText == '-' && (checkIfOperatorExists(getHistory()))) {
+      printOutput("-");
+    } else if (getOutput() && checkIfOperatorExists(getHistory())) {
       let n = getHistory().toString() + " " + getOutput().toString();
       printOutput("");
       let res = eval(n);
