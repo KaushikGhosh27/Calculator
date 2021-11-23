@@ -17,15 +17,15 @@ body {
 
 .sub-container {
   position: absolute;
-  top: 135px;
+  top: 90px;
   left: 205px;
   border-radius: 10px;
 }
 
 .top-container {
-  background: #3b413b;
-  height: 15vh;
-  width: 25vw;
+  background: #2b313c;
+  height: 20vh;
+  width: 28vw;
   margin: auto;
   display: flex;
   flex-flow: row nowrap;
@@ -34,8 +34,9 @@ body {
 
 .display {
   background-color: #060708b8;
+  border-radius: 12%;
   height: 15vh;
-  width: 20vw;
+  width: 21vw;
   position: relative;
 }
 
@@ -43,20 +44,20 @@ body {
   color: white;
   font-size: 20px;
   position: absolute;
-  top: 5px;
-  right: 1px;
+  top: 6px;
+  right: 6px;
 }
 .output{
   color: white;
   font-size: 45px;
   position: absolute;
   bottom: 0;
-  right: 1px;
+  right: 6px;
 }
 .bottom-container {
   background: #233b38;
   height: 50vh;
-  width: 25vw;
+  width: 28vw;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -92,6 +93,7 @@ button:hover{
   background-color: #ff1f1fc9;
   color: white;
   height: 70px;
+  width: 50px;
   outline: none;
 }
 
