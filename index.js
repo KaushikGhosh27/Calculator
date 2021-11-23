@@ -96,6 +96,7 @@ operatorButtons.forEach(button => {
   button.addEventListener('click', () => {
     if (getOutput() == "" && (getHistory() == "" && button.innerText != "-")) return;
     else if(getOutput() == "-") return;
+    else if(getOutput() == ".") return;
     else if (button.innerText == '-' && (getHistory() == "" && getOutput() == "")) {
       printOutput("-");
     } else if (button.innerText == '-' && (checkIfOperatorExists(getHistory()))) {
