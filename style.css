@@ -52,7 +52,6 @@ body {
   position: absolute;
   bottom: 0;
   right: 1px;
-  word-wrap: break;
 }
 .bottom-container {
   background: #233b38;
@@ -69,7 +68,7 @@ body {
 }
 
 button {
-  background: #2d5583db;
+  background: #1f0f34db;
   border-radius: 15%;
   color: white;
   cursor: pointer;
@@ -81,17 +80,22 @@ button {
   margin: 1.3em;
 }
 
+button:hover{
+  transform: scale(1.2);
+}
+
 #clear{
-  background-color: red;
+  background-color:#ff1f1fc9;
 }
 
 #clearAll {
-  background-color: #2C394B;
+  background-color: #ff1f1fc9;
   color: white;
   height: 70px;
   outline: none;
 }
 
 #equal{
-  background: #4d5668;
+  background: white;
+  color: black;
 }
