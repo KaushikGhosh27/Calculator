@@ -1,8 +1,8 @@
-numberButtons = document.querySelectorAll(".number");
-operatorButtons = document.querySelectorAll(".operator");
-clearButton = document.querySelector('#clear')
-clearAllButton = document.querySelector("#clearAll")
-equalButton = document.querySelector("#equal");
+let numberButtons = document.querySelectorAll(".number");
+let operatorButtons = document.querySelectorAll(".operator");
+let clearButton = document.querySelector('#clear')
+let clearAllButton = document.querySelector("#clearAll")
+let equalButton = document.querySelector("#equal");
 
 function getHistory() {
   return document.querySelector(".history").innerText.toString();
@@ -85,6 +85,7 @@ equalButton.addEventListener('click', () => {
 
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
+    if(getOutput() == "0" && button.innerText == "0")return;
     if (button.innerText == "." && getOutput().includes(".")) return;
     if (getOutput() == "") printOutput(button.innerText);
     else printOutput(getOutput().toString() + button.innerText.toString());
